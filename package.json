@@ -6,9 +6,13 @@
   "scripts": {
     "dev": "npm run clean && webpack  --config ./config/webpack.dev.js  --progress --profile",
     "prod": "npm run clean && webpack  --config ./config/webpack.prod.js  --progress --profile --bail",
+    "test": "npm run lint && karma start",
+    "lint": "npm run tslint \"src/**/*.ts\"",
+    "docs": "npm run typedoc",
     "clean": "npm run rimraf -- dist",
     "rimraf": "rimraf",
-    "test": "karma run",
+    "typedoc": "typedoc",
+    "tslint": "tslint",
     "karma": "karma start"
   },
   "repository": {
@@ -72,6 +76,7 @@
     "tslint": "^5.9.1",
     "tslint-loader": "^3.5.3",
     "typedoc": "^0.10.0",
+    "typedoc-webpack-plugin": "^1.1.4",
     "typescript": "^2.7.1",
     "uglifyjs-webpack-plugin": "^1.1.8",
     "url-loader": "^0.6.2",

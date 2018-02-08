@@ -24,6 +24,7 @@ export class Parser implements CallbackState {
     private _endIndex: number;
     private _tokenizer: Tokenizer;
     public constructor(cbs?: CallbackState, options?: ParserOptions) {
+        let TokenizerImpl;
         this._options = options || this._defaultOptions;
         this._cbs = cbs || {};
         this._tagName = "";
@@ -33,10 +34,12 @@ export class Parser implements CallbackState {
         this._stack = [];
         this._startIndex = 0;
         this._endIndex = null;
-        if (this._options.Tokenizer) {
-            Tokenizer = this._options.Tokenizer;
+        if (!!this._options.Tokenizer) {
+            TokenizerImpl = this._options.Tokenizer;
+        } else {
+            TokenizerImpl = Tokenizer;
         }
-        this._tokenizer = new Tokenizer(this._options, this);
+        this._tokenizer = new TokenizerImpl(this._options, this);
     }
     public onText(data: string) {
         this.updatePosition(1);

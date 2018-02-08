@@ -6,9 +6,10 @@ export class AstTag extends AstNode {
     private _attrs?: {[name: string]: string};
     private _children?: AstNode[];
 
-    public constructor() {
+    public constructor(name: string) {
         super();
         this.type = AstNodeType.TAG;
+        this.name = name;
     }
 
     public get name(): string {
