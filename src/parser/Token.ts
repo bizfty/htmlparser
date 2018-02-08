@@ -1,0 +1,76 @@
+export enum Token {
+
+    TEXT,
+    BEFORE_TAG_NAME, // after <
+    IN_TAG_NAME ,
+    IN_SELF_CLOSING_TAG,
+    BEFORE_CLOSING_TAG_NAME,
+    IN_CLOSING_TAG_NAME,
+    AFTER_CLOSING_TAG_NAME,
+
+    // attributes
+    BEFORE_ATTRIBUTE_NAME,
+    IN_ATTRIBUTE_NAME,
+    AFTER_ATTRIBUTE_NAME,
+    BEFORE_ATTRIBUTE_VALUE,
+    IN_ATTRIBUTE_VALUE_DQ, // "
+    IN_ATTRIBUTE_VALUE_SQ, // '
+    IN_ATTRIBUTE_VALUE_NQ,
+
+    // declarations
+    BEFORE_DECLARATION , // !
+    IN_DECLARATION,
+
+    // processing instructions
+    IN_PROCESSING_INSTRUCTION, // ?
+
+    // comments
+    BEFORE_COMMENT,
+    IN_COMMENT,
+    CONDITION_COMMENT, // [
+    AFTER_COMMENT_1,
+    AFTER_COMMENT_2,
+
+    // cdata
+    BEFORE_CDATA_1, // [
+    BEFORE_CDATA_2, // C
+    BEFORE_CDATA_3, // D
+    BEFORE_CDATA_4, // A
+    BEFORE_CDATA_5, // T
+    BEFORE_CDATA_6, // A
+    IN_CDATA, // [
+    AFTER_CDATA_1, // ]
+    AFTER_CDATA_2, // ]
+
+    // special tags
+    BEFORE_SPECIAL, // S
+    BEFORE_SPECIAL_END,   // S
+
+    BEFORE_SCRIPT_1, // C
+    BEFORE_SCRIPT_2, // R
+    BEFORE_SCRIPT_3, // I
+    BEFORE_SCRIPT_4, // P
+    BEFORE_SCRIPT_5, // T
+
+    AFTER_SCRIPT_1, // C
+    AFTER_SCRIPT_2, // R
+    AFTER_SCRIPT_3, // I
+    AFTER_SCRIPT_4, // P
+    AFTER_SCRIPT_5, // T
+
+    BEFORE_STYLE_1, // T
+    BEFORE_STYLE_2, // Y
+    BEFORE_STYLE_3, // L
+    BEFORE_STYLE_4, // E
+
+    AFTER_STYLE_1, // T
+    AFTER_STYLE_2, // Y
+    AFTER_STYLE_3, // L
+    AFTER_STYLE_4, // E
+
+    BEFORE_ENTITY, // &
+    BEFORE_NUMERIC_ENTITY, // #
+    IN_NAMED_ENTITY,
+    IN_NUMERIC_ENTITY,
+    IN_HEX_ENTITY // X
+}
